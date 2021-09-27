@@ -1,4 +1,5 @@
 package Menu;
+import static Menu.Registro.*;
 import java.util.LinkedList; // Lista enlasada
 import java.util.Scanner;
 
@@ -25,19 +26,27 @@ public class UIMenu {
                     System.out.println("Doctor");
                     break;
                 case 2:
+                    String nombre = "", apellidoP = "", apellidoM = "", numTrabajador = "", curp = "", direccion = "", correo = "";
+                    Double sueldo = 0.0;
+                    int antiguedad = 0;
+
                     System.out.println("Cual es el puesto que quieres registrar?");
                     System.out.println("1. Investigador");
                     System.out.println("2. Profesor");
                     System.out.println("3. Ayudante");
                     System.out.println("4. Puesto Administrativo");
 
+                    // Queremos un investigador
+                    String  facultad = "";
+                    char nivelProfesor =' ',nivelSNI = ' ';
+                    validacionDatosInvestigador(nombre, apellidoP,  apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad,  correo,  facultad,  nivelProfesor,  nivelSNI);
 
 
 
 
-                    System.out.println("Paciente");
-                    LinkedList listaProfesores = new LinkedList();
-                    listaProfesores.add("Palabra");
+
+
+
 
 
 

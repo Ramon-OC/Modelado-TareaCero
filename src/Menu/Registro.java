@@ -63,12 +63,26 @@ public class Registro {
 
 
 
-    public static void validacionDatosInvestigador(String nombreM, String apellidoM, String apellidoMM, String numTrabajadorM, String curpM, String direccónM, Double sueldoM, int antiguedadM, String correoM, String facultadM, char nivelM, char sni){
-        validacionDatosGenerales(nombreM, apellidoM, apellidoMM, numTrabajadorM, curpM, direccónM, sueldoM, antiguedadM, correoM);
+    public static void validacionDatosInvestigador(String nombreM, String apellidoPM, String apellidoMM, String numTrabajadorM, String curpM, String direccionM, Double sueldoM, int antiguedadM, String correoM, String facultadM, char nivelProfesor, char nivelSNI){
+        validacionDatosGenerales(nombreM, apellidoPM, apellidoMM, numTrabajadorM, curpM, direccionM, sueldoM, antiguedadM, correoM);
         //Validar los datos propios de Investigador
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Inserte su Facultad o instituto al que pertenece: ");
+        facultadM = sc.nextLine();
+        String primeraLetra = facultadM.substring(0, 1);
+        String segundaLetra = facultadM.substring(1, facultadM.length());
+        primeraLetra = primeraLetra.toUpperCase();
+        facultadM = primeraLetra + segundaLetra;
+        System.out.println("La facultad registrada es "+facultadM+".");
 
+        System.out.print("Inserte el nivel de investigador: ");
+        nivelProfesor = sc.next().charAt(0);
+        System.out.println("El nivel de investigador es: "+nivelProfesor+".");
 
+        System.out.print("Inserte el nivel de investigador: ");
+        nivelSNI = sc.next().charAt(0);
+        System.out.println("El nivel de investigador es: "+nivelSNI+".");
 
     }
 
