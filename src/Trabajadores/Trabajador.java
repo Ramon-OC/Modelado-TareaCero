@@ -1,6 +1,8 @@
 package Trabajadores;
+import java.util.Scanner;
 
 public class Trabajador {
+    Scanner sc = new Scanner(System.in);
     String nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo;
     Double sueldo;
     int antiguedad;
@@ -26,5 +28,10 @@ public class Trabajador {
         System.out.println("Numero de trabajador: " + numTrabajador);
         System.out.println("Antiguedad: " + antiguedad);
     }
+
+
+
+
+
 
 }

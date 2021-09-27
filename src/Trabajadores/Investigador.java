@@ -15,7 +15,7 @@ public class Investigador extends Trabajador {
 
 
 
-    public void datosInvestigador(){
+    public void imprimirInvestigador(){
         datosBasicos();
         System.out.println("Facultad: "+facultad);
         System.out.println("Nivel: "+nivelProfesor);

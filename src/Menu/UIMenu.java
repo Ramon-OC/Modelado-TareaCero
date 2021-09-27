@@ -1,8 +1,13 @@
 package Menu;
-import static Menu.Registro.*;
+
 import Trabajadores.Investigador;
 
+import static Menu.Registro.*;
+import static Menu.Registro.verificaSueldo;
+import static Trabajadores.Investigador.*;
+
 import java.util.LinkedList; // Lista enlasada
+
 import java.util.Scanner;
 
 public class UIMenu {
@@ -15,7 +20,7 @@ public class UIMenu {
         do {
             System.out.println("1. Buscar a un trabajador");
             System.out.println("2. Registrar un trabajador nuevo");
-            System.out.println("3. Dar de baja a un trabajador");
+            System.out.println("3. Dar de baja a un trabajador, temporalmente muestra");
             System.out.println("4. Consultar cheques");
             System.out.println("5. Generar los pagos de la nomina");
             System.out.println("0. Salir");
@@ -25,30 +30,50 @@ public class UIMenu {
 
             switch (response){
                 case 1:
-                    System.out.println("Doctor");
+
+
+
                     break;
                 case 2:
-                    String nombre = "", apellidoP = "", apellidoM = "", numTrabajador = "", curp = "", direccion = "", correo = "";
-                    Double sueldo = 0.0;
-                    int antiguedad = 0;
 
-                    System.out.println("Cual es el puesto que quieres registrar?");
-                    System.out.println("1. Trabajadores.Investigador");
-                    System.out.println("2. Trabajadores.Profesor");
-                    System.out.println("3. Trabajadores.Ayudante");
-                    System.out.println("4. Puesto Administrativo");
+                    break;
 
-                    // Queremos un investigador
-                    String  facultad = "";
-                    char nivelProfesor =' ',nivelSNI = ' ';
-                    validacionDatosInvestigador(nombre, apellidoP,  apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad,  correo,  facultad,  nivelProfesor,  nivelSNI);
-                    Investigador prueba = new Investigador(nombre, apellidoP,  apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad,  correo,  facultad,  nivelProfesor,  nivelSNI);
+
+
+                case 3:
+
+                    String nombre = verificaNombre();
+                    String apellidoP = verificarApellido(1);
+                    String apellidoM = verificarApellido(0);
+                    String numTrabajador = verificarNumero();
+                    String curp = verificarCurp();
+                    String direccion = verificarDireccion();
+                    String correo = verificaCorreo();
+                    Double sueldo = verificaSueldo();
+                    int antiguedad = verificaAntiguedad();
+
+                    System.out.println("El nombre es "+nombre);
+                    System.out.println("El apellido paterno es "+apellidoP);
+                    System.out.println("El apellido materno es "+apellidoM);
+                    System.out.println("El numero de trabajador es "+numTrabajador);
+                    System.out.println("El curp es "+curp);
+                    System.out.println("Su direccion es "+direccion);
+                    System.out.println("El correo es "+correo);
+                    System.out.println("El sueldo es "+sueldo);
+                    System.out.println("La antiguedad es "+antiguedad);
 
 
 
 
 
                     break;
+
+                case 4:
+
+                    Investigador ayuda = crearInvestigador();
+                    ayuda.imprimirInvestigador();
+                    break;
+
                 case 0:
                     System.out.println("Thank you for you visit");
                     break;
