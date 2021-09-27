@@ -1,3 +1,5 @@
+package Trabajadores;
+
 public class Trabajador {
     String nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo;
     Double sueldo;

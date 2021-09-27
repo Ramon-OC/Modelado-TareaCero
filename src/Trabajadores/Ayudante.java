@@ -1,4 +1,8 @@
-public class Ayudante extends Trabajador{
+package Trabajadores;
+
+import Trabajadores.Trabajador;
+
+public class Ayudante extends Trabajador {
     String facultad, clase,horario;
     double porcentajeCreditos;
     char nivelAyudante;

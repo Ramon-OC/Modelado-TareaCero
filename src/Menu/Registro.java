@@ -65,7 +65,7 @@ public class Registro {
 
     public static void validacionDatosInvestigador(String nombreM, String apellidoPM, String apellidoMM, String numTrabajadorM, String curpM, String direccionM, Double sueldoM, int antiguedadM, String correoM, String facultadM, char nivelProfesor, char nivelSNI){
         validacionDatosGenerales(nombreM, apellidoPM, apellidoMM, numTrabajadorM, curpM, direccionM, sueldoM, antiguedadM, correoM);
-        //Validar los datos propios de Investigador
+        //Validar los datos propios de Trabajadores.Investigador
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Inserte su Facultad o instituto al que pertenece: ");

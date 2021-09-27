@@ -1,5 +1,7 @@
 package Menu;
 import static Menu.Registro.*;
+import Trabajadores.Investigador;
+
 import java.util.LinkedList; // Lista enlasada
 import java.util.Scanner;
 
@@ -31,22 +33,16 @@ public class UIMenu {
                     int antiguedad = 0;
 
                     System.out.println("Cual es el puesto que quieres registrar?");
-                    System.out.println("1. Investigador");
-                    System.out.println("2. Profesor");
-                    System.out.println("3. Ayudante");
+                    System.out.println("1. Trabajadores.Investigador");
+                    System.out.println("2. Trabajadores.Profesor");
+                    System.out.println("3. Trabajadores.Ayudante");
                     System.out.println("4. Puesto Administrativo");
 
                     // Queremos un investigador
                     String  facultad = "";
                     char nivelProfesor =' ',nivelSNI = ' ';
                     validacionDatosInvestigador(nombre, apellidoP,  apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad,  correo,  facultad,  nivelProfesor,  nivelSNI);
-
-
-
-
-
-
-
+                    Investigador prueba = new Investigador(nombre, apellidoP,  apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad,  correo,  facultad,  nivelProfesor,  nivelSNI);
 
 
 

@@ -1,4 +1,8 @@
-public class PuestoAdministrativo extends Trabajador{
+package Trabajadores;
+
+import Trabajadores.Trabajador;
+
+public class PuestoAdministrativo extends Trabajador {
     String  lugarTrabajo, puesto, horario;
 
     public PuestoAdministrativo(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo, String lugarTrabajo, String puesto, String horario){

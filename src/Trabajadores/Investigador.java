@@ -1,5 +1,8 @@
-import javax.jws.soap.SOAPBinding;
-public class Investigador extends Trabajador{
+package Trabajadores;
+
+import Trabajadores.Trabajador;
+
+public class Investigador extends Trabajador {
     String  facultad;
     char nivelProfesor,nivelSNI;
 

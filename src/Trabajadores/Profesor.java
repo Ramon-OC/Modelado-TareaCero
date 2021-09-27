@@ -1,3 +1,7 @@
+package Trabajadores;
+
+import Trabajadores.Trabajador;
+
 public class Profesor extends Trabajador {
     String  facultad, clase, horario, titulo;
     char nivelProfesor;
