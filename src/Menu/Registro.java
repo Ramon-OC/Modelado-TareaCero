@@ -1,7 +1,9 @@
 package Menu;
 
+import Trabajadores.Ayudante;
 import Trabajadores.Investigador;
 import Trabajadores.Profesor;
+import Trabajadores.PuestoAdministrativo;
 
 import java.util.Scanner;
 
@@ -54,6 +56,41 @@ public class Registro {
         System.out.print("Inserte su curp: "); // 8 digitos, no cambia... string
         curp = sc.nextLine();
         return curp;
+    }
+
+    public static String verificaCurpDos(){
+        boolean registroExitoso = false;
+        String curp;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Escriba su CURP: ");
+
+
+        do{
+            try{
+                curp = sc.nextLine();
+                curp.toUpperCase();
+            }catch(Exception e){
+                System.out.println("	- No es una opción valida, intenta nuevamente");
+                System.out.print("Mensaje de error con la primera e: ");
+                curp = sc.nextLine();
+            }
+
+            if(curp.length() != 16) {
+                System.out.println("El largo de tu cadena es de: " + curp.length());
+                System.out.println("Mensaje error de largo, escribe 16:");
+                registroExitoso = false;
+            }else{
+                registroExitoso = true;
+            }
+
+        }while(registroExitoso==false);
+
+
+        return curp;
+
+
+
+
     }
 
     public static String verificarDireccion() {
@@ -122,6 +159,31 @@ public class Registro {
         return horario;
     }
 
+    public static String verificarFacultad() {
+        String facultad;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Inserte su facultad: ");
+        facultad = sc.nextLine();
+        return facultad;
+
+    }
+
+    public static String verificarLuegarTrabajo(){
+        String lugarTrabajo;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Inserte su lugar de trabajo: ");
+        lugarTrabajo = sc.nextLine();
+        return lugarTrabajo;
+    }
+
+    public static String verificarPuesto(){
+        String puesto;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Inserte su puesto: ");
+        puesto = sc.nextLine();
+        return puesto;
+    }
+
     public static Double verificaSueldo() {
         double sueldo;
         Scanner sc = new Scanner(System.in);
@@ -130,21 +192,25 @@ public class Registro {
         return sueldo;
     }
 
+    public static Double verificarPorcentaje() {
+        double numCreditos;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Inserte su porcentaje de creditos: ");
+        numCreditos = sc.nextDouble();
+        return numCreditos;
+    }
+
+    public static boolean verificarPasante(){
+        boolean esPasante = false;
+        return esPasante;
+    }
+
     public static int verificaAntiguedad() {
         int antiguedad;
         Scanner sc = new Scanner(System.in);
         System.out.print("Inserte su antiguedad: ");
         antiguedad = sc.nextInt();
         return antiguedad;
-    }
-
-    public static String verificarFacultad() {
-        String facultad;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Inserte su facultad: ");
-        facultad = sc.nextLine();
-        return facultad;
-
     }
 
     public static char verificarNivelProfesor() {
@@ -163,6 +229,15 @@ public class Registro {
         return nivelSNI;
     }
 
+    public static char verificarNivelAyudante(){
+        char nivelAyudante;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Inserte su nivel de ayudante (a o b): ");
+        nivelAyudante = sc.next().charAt(0);
+        return nivelAyudante;
+
+    }
+
 
     public static String[] agregarStringsBasicos(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, String correo) {
         String[] temporal = new String[10];
@@ -176,112 +251,63 @@ public class Registro {
         return temporal;
     }
 
-   /* public static Investigador crearInvestigador(){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-
-
-        //agregarBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad, correo);
-
-        String[] datos = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-
-
-
-
-
-
-
-
-        // Investigador
-
-
-       /* String facultad = verificarFacultad();
-        char nivelProfesor = verificarNivelProfesor();
-        char nivelSNI = verificarNivelSNI();
-
-
-        for(int i = 0; i<datos.length; i++){
-            System.out.println("Dato: "+datos[i]);
+        public static Investigador crearInvestigador (){
+            String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
+            String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
+            Double sueldo = verificaSueldo();
+            int antiguedad = verificaAntiguedad();
+            String facultad = verificarFacultad();
+            char nivelProfesor = verificarNivelProfesor();
+            char nivelSNI = verificarNivelSNI();
+            Investigador investigadorTemporal = new Investigador(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],facultad, nivelProfesor,nivelSNI);
+            return investigadorTemporal;
         }
 
-        System.out.println("Deberia de imprimor");
-
-        Investigador investigadorFalso = new Investigador(datos[0],datos[1],datos[2],datos[3],datos[4],datos[5],sueldo,antiguedad,datos[6],facultad, nivelProfesor,nivelSNI);
-
-        return investigadorFalso;
-
-    }*/
-
-
-    /*public static void pruebaArreglo (){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-        String facultad = verificarFacultad();
-        char nivelProfesor = verificarNivelProfesor();
-        char nivelSNI = verificarNivelSNI();
-        String[] temporal = new String[7];
-        temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-
-
-      /*  for(int i = 0; i<temporal.length; i++){
-            System.out.println("Dato: "+temporal[i]);
+        public static Profesor crearProfesor(){
+            String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
+            String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
+            Double sueldo = verificaSueldo();
+            int antiguedad = verificaAntiguedad();
+            // Propios de profesor
+            String facultad = verificarFacultad();
+            String clase = verificarClase();
+            String horario = verificarHorario();
+            char nivelProfesor = verificarNivelProfesor();
+            String titulo = verificarTitulo();
+            Profesor profesorTemporal = new Profesor(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],facultad,clase,horario,nivelProfesor,titulo);
+            return profesorTemporal;
         }
 
-        System.out.println("Voy a crear un trabajador");
-    Investigador investigadorFalso = new Investigador(temporal[0], temporal[1], temporal[2], temporal[3], temporal[4], temporal[5], sueldo, antiguedad, temporal[6], facultad, nivelProfesor, nivelSNI);
+        public static Ayudante crearAyudante(){
+            String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
+            String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
+            Double sueldo = verificaSueldo();
+            int antiguedad = verificaAntiguedad();
+            // Propios de adjunto
+            String facultad = verificarFacultad();
+            Double porcentajeDeCreditos = verificarPorcentaje();
+            char nivelAyudante = verificarNivelAyudante();
+            boolean esPasante = verificarPasante();
+            String clase = verificarClase();
+            String horario = verificarHorario();
 
+            Ayudante ayudanteTemporal = new Ayudante(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],facultad,porcentajeDeCreditos,nivelAyudante,esPasante,clase,horario);
+            return ayudanteTemporal;
+        }
 
-    }*/
+        public static PuestoAdministrativo crearAdministrativo(){
+            String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
+            String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
+            Double sueldo = verificaSueldo();
+            int antiguedad = verificaAntiguedad();
+            // Propios de Administrativo
+            String lugarDeTrabajo = verificarLuegarTrabajo();
+            String puesto = verificarPuesto();
+            String horario = verificarHorario();
 
-    public static Investigador crearInvestigador (){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-        String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-        String facultad = verificarFacultad();
-        char nivelProfesor = verificarNivelProfesor();
-        char nivelSNI = verificarNivelSNI();
-        Investigador investigadorTemporal = new Investigador(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],facultad, nivelProfesor,nivelSNI);
-        return investigadorTemporal;
-    }
-
-    public static Profesor crearProfesor(){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-        String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-        // Propios de profesor
-        String facultad = verificarFacultad();
-        String clase = verificarClase();
-        String horario = verificarHorario();
-        char nivelProfesor = verificarNivelProfesor();
-        String titulo = verificarTitulo();
-        Profesor profesorTemporal = new Profesor(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],facultad,clase,horario,nivelProfesor,titulo);
-        return profesorTemporal;
-    }
-
-    public static Profesor crearAyudante(){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-        String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-        // Propios de adjunto
-        //return investigadorTemporal;
-    }
-
-    public static Profesor crearAdministrativo(){
-        String nombre = "",apellidoP = "",apellidoM = "",numTrabajador = "",curp = "",direccion = "",correo = "";
-        String[] temporal = agregarStringsBasicos(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo);
-        Double sueldo = verificaSueldo();
-        int antiguedad = verificaAntiguedad();
-        // Propios de Administrativo
-
-        //return investigadorTemporal;
-    }
-
-
+            PuestoAdministrativo administrativoTemporal = new PuestoAdministrativo(temporal[0],temporal[1],temporal[2],temporal[3],temporal[4],temporal[5],sueldo,antiguedad,temporal[6],lugarDeTrabajo,puesto,horario);
+            return administrativoTemporal;
+        }
 
 
 }

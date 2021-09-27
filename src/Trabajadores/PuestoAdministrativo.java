@@ -10,7 +10,7 @@ public class PuestoAdministrativo extends Trabajador {
         this.horario = horario;
     }
 
-    public void datosPuestoAdministrativo(){
+    public void imprimirAdministrativo(){
         muestraDatosBasicos();
         System.out.println(" - Lugar de Trabajo: "+lugarTrabajo);
         System.out.println(" - Puesto: "+puesto);

@@ -14,7 +14,7 @@ public class Profesor extends Trabajador {
         this.nivelProfesor = nivelProfesor;
     }
 
-    public void datosProfesor(){
+    public void imprimirProfesor(){
         muestraDatosBasicos();
         System.out.println(" - Facultad: "+facultad);
         System.out.println(" - Clase: "+clase);
