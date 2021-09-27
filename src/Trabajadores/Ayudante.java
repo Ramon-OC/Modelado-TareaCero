@@ -1,6 +1,5 @@
 package Trabajadores;
 
-import Trabajadores.Trabajador;
 
 public class Ayudante extends Trabajador {
     String facultad, clase,horario;
@@ -19,7 +18,7 @@ public class Ayudante extends Trabajador {
     }
 
     public void datosProfesor(){
-        datosBasicos();
+        muestraDatosBasicos();
         System.out.println("Facultad: "+facultad);
         System.out.println("Clase: "+clase);
         System.out.println("Horario: "+horario);

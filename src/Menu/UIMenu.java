@@ -1,12 +1,10 @@
 package Menu;
 
+
 import Trabajadores.Investigador;
 
 import static Menu.Registro.*;
-import static Menu.Registro.verificaSueldo;
-import static Trabajadores.Investigador.*;
 
-import java.util.LinkedList; // Lista enlasada
 
 import java.util.Scanner;
 
@@ -31,45 +29,19 @@ public class UIMenu {
             switch (response){
                 case 1:
 
-
-
                     break;
                 case 2:
 
                     break;
 
 
-
                 case 3:
-
-                    String nombre = verificaNombre();
-                    String apellidoP = verificarApellido(1);
-                    String apellidoM = verificarApellido(0);
-                    String numTrabajador = verificarNumero();
-                    String curp = verificarCurp();
-                    String direccion = verificarDireccion();
-                    String correo = verificaCorreo();
-                    Double sueldo = verificaSueldo();
-                    int antiguedad = verificaAntiguedad();
-
-                    System.out.println("El nombre es "+nombre);
-                    System.out.println("El apellido paterno es "+apellidoP);
-                    System.out.println("El apellido materno es "+apellidoM);
-                    System.out.println("El numero de trabajador es "+numTrabajador);
-                    System.out.println("El curp es "+curp);
-                    System.out.println("Su direccion es "+direccion);
-                    System.out.println("El correo es "+correo);
-                    System.out.println("El sueldo es "+sueldo);
-                    System.out.println("La antiguedad es "+antiguedad);
-
-
-
 
 
                     break;
 
                 case 4:
-
+                    System.out.println("Numero cuatro");
                     Investigador ayuda = crearInvestigador();
                     ayuda.imprimirInvestigador();
                     break;

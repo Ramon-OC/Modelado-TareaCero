@@ -1,7 +1,5 @@
 package Trabajadores;
 
-import Trabajadores.Trabajador;
-
 public class Investigador extends Trabajador {
     String  facultad;
     char nivelProfesor,nivelSNI;
@@ -13,13 +11,11 @@ public class Investigador extends Trabajador {
         this.nivelSNI = nivelSNI;
     }
 
-
-
     public void imprimirInvestigador(){
-        datosBasicos();
-        System.out.println("Facultad: "+facultad);
-        System.out.println("Nivel: "+nivelProfesor);
-        System.out.println("sni: "+nivelSNI);
+        muestraDatosBasicos();
+        System.out.println(" - Facultad: "+facultad);
+        System.out.println(" - Nivel de profesor: "+nivelProfesor);
+        System.out.println(" - Nivel de SNI: "+nivelSNI);
     }
 
 }

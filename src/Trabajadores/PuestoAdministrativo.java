@@ -1,7 +1,5 @@
 package Trabajadores;
 
-import Trabajadores.Trabajador;
-
 public class PuestoAdministrativo extends Trabajador {
     String  lugarTrabajo, puesto, horario;
 
@@ -13,10 +11,10 @@ public class PuestoAdministrativo extends Trabajador {
     }
 
     public void datosPuestoAdministrativo(){
-        datosBasicos();
-        System.out.println("Lugar de Trabajo: "+lugarTrabajo);
-        System.out.println("Puesto: "+puesto);
-        System.out.println("Horario: "+horario);
+        muestraDatosBasicos();
+        System.out.println(" - Lugar de Trabajo: "+lugarTrabajo);
+        System.out.println(" - Puesto: "+puesto);
+        System.out.println(" - Horario: "+horario);
     }
 
 }

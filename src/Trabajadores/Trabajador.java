@@ -1,8 +1,6 @@
 package Trabajadores;
-import java.util.Scanner;
 
 public class Trabajador {
-    Scanner sc = new Scanner(System.in);
     String nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo;
     Double sueldo;
     int antiguedad;
@@ -19,14 +17,14 @@ public class Trabajador {
         this.correo=correo;
     }
 
-    public void datosBasicos() {
-        System.out.println("Aqui estan los datos de: " + nombre + " " + apellidoP + " " + apellidoM);
-        System.out.println("CURP: " + curp);
-        System.out.println("Direccion: " + direccion);
-        System.out.println("Correo: " + correo);
-        System.out.println("Sueldo: " + sueldo);
-        System.out.println("Numero de trabajador: " + numTrabajador);
-        System.out.println("Antiguedad: " + antiguedad);
+    public void muestraDatosBasicos() {
+        System.out.println("Datos registrados de: "+nombre+ " " + apellidoP + " " + apellidoM);
+        System.out.println(" - CURP: " + curp);
+        System.out.println(" - Dirección: " + direccion);
+        System.out.println(" - Correo electornico: " + correo);
+        System.out.println(" - Sueldo: " +sueldo+" MXN");
+        System.out.println(" - Número de trabajador: " + numTrabajador);
+        System.out.println(" - Antigüedad: " + antiguedad);
     }
 
 

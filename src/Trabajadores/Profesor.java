@@ -1,12 +1,11 @@
 package Trabajadores;
 
-import Trabajadores.Trabajador;
 
 public class Profesor extends Trabajador {
     String  facultad, clase, horario, titulo;
     char nivelProfesor;
 
-    public Profesor(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo, String  facultad, String clase, String horario, String titulo, char nivelProfesor){
+    public Profesor(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo, String  facultad, String clase, String horario, char nivelProfesor, String titulo){
         super(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad, correo);
         this.facultad = facultad;
         this.clase = clase;
@@ -16,12 +15,12 @@ public class Profesor extends Trabajador {
     }
 
     public void datosProfesor(){
-        datosBasicos();
-        System.out.println("Facultad: "+facultad);
-        System.out.println("Clase: "+clase);
-        System.out.println("Horario: "+horario);
-        System.out.println("Titulo: "+titulo);
-        System.out.println("Nivel profesor: "+nivelProfesor);
+        muestraDatosBasicos();
+        System.out.println(" - Facultad: "+facultad);
+        System.out.println(" - Clase: "+clase);
+        System.out.println(" - Horario: "+horario);
+        System.out.println(" - Titulo: "+titulo);
+        System.out.println(" - Nivel de profesor: "+nivelProfesor);
     }
 
 
