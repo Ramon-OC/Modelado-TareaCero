@@ -2,8 +2,8 @@ public class Profesor extends Trabajador {
     String  facultad, clase, horario, titulo;
     char nivelProfesor;
 
-    public Profesor(String nombre, String apellidoP, String apellidoM, String curp, String direccion, String correo, Double sueldo,Double numTrabajador,Double antiguedad, String  facultad, String clase, String horario, String titulo, char nivelProfesor){
-        super(nombre, apellidoP, apellidoM, curp, direccion, correo, sueldo, numTrabajador, antiguedad);
+    public Profesor(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo, String  facultad, String clase, String horario, String titulo, char nivelProfesor){
+        super(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad, correo);
         this.facultad = facultad;
         this.clase = clase;
         this.horario = horario;

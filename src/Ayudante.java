@@ -4,8 +4,8 @@ public class Ayudante extends Trabajador{
     char nivelAyudante;
     boolean esPasante; // si es falso es titulado
 
-    public Ayudante(String nombre, String apellidoP, String apellidoM, String curp, String direccion, String correo, Double sueldo,Double numTrabajador,Double antiguedad, String  facultad, String clase, String horario, Double porcentajeCreditos, char nivelAyudante, boolean esPasante){
-        super(nombre, apellidoP, apellidoM, curp, direccion, correo, sueldo, numTrabajador, antiguedad);
+    public Ayudante(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo, String  facultad, String clase, String horario, Double porcentajeCreditos, char nivelAyudante, boolean esPasante){
+        super(nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, sueldo, antiguedad, correo);
         this.facultad = facultad;
         this.clase = clase;
         this.horario = horario;
