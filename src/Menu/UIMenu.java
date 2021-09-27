@@ -25,10 +25,19 @@ public class UIMenu {
                     System.out.println("Doctor");
                     break;
                 case 2:
+                    System.out.println("Cual es el puesto que quieres registrar?");
+                    System.out.println("1. Investigador");
+                    System.out.println("2. Profesor");
+                    System.out.println("3. Ayudante");
+                    System.out.println("4. Puesto Administrativo");
+
+
+
+
+
                     System.out.println("Paciente");
                     LinkedList listaProfesores = new LinkedList();
                     listaProfesores.add("Palabra");
-                    listaProfesores.add()
 
 
 

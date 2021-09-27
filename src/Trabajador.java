@@ -1,17 +1,18 @@
 public class Trabajador {
-    String nombre, apellidoP, apellidoM, curp, direccion, correo;
-    Double sueldo, numTrabajador, antiguedad;
+    String nombre, apellidoP, apellidoM, numTrabajador, curp, direccion, correo;
+    Double sueldo;
+    int antiguedad;
 
-    public Trabajador(String nombre, String apellidoP, String apellidoM, String curp, String direccion, String correo, Double sueldo,Double numTrabajador,Double antiguedad){
+    public Trabajador(String nombre, String apellidoP, String apellidoM, String numTrabajador, String curp, String direccion, Double sueldo, int antiguedad, String correo){
         this.nombre=nombre;
         this.apellidoP=apellidoP;
         this.apellidoM=apellidoM;
+        this.numTrabajador=numTrabajador;
         this.curp=curp;
         this.direccion=direccion;
-        this.correo=correo;
         this.sueldo=sueldo;
-        this.numTrabajador=numTrabajador;
         this.antiguedad=antiguedad;
+        this.correo=correo;
     }
 
     public void datosBasicos() {
